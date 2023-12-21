@@ -4,6 +4,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
  * @author sa
  * @date 6.02.2021
@@ -12,6 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ApiController
 {
+    @GetMapping
+    public ResponseEntity<?> getStatus() throws UnknownHostException {
+        return ResponseEntity.ok("It works successfully. Hostname: " + InetAddress.getLocalHost().getHostName());
+    }
     @GetMapping("api/health")
     public ResponseEntity<?> healthCheck()
     {
