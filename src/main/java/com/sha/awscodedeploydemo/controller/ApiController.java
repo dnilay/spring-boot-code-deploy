@@ -17,7 +17,7 @@ public class ApiController
 {
     @GetMapping
     public ResponseEntity<?> getStatus() throws UnknownHostException {
-        return ResponseEntity.ok("It works successfully. Hostname: " + InetAddress.getLocalHost().getHostName());
+        return ResponseEntity.ok("It works successfullyv2. Hostname: " + InetAddress.getLocalHost().getHostName());
     }
     @GetMapping("api/health")
     public ResponseEntity<?> healthCheck()
