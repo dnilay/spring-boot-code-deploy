@@ -1,11 +1,13 @@
 package com.sha.awscodedeploydemo.controller;
 
+import com.sha.awscodedeploydemo.model.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.List;
 
 /**
  * @author sa
@@ -24,4 +26,11 @@ public class ApiController
     {
         return ResponseEntity.ok("It works successfully. v2");
     }
+
+    @GetMapping("/api/products")
+    public ResponseEntity<?> getProducts2()
+    {
+      return ResponseEntity.ok(List.of(new Product("1L", "Product 1",12),new Product("2l","Product 2",13))) ;
+    }
+
 }
